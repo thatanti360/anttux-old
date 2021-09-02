@@ -23,6 +23,8 @@
 
 //10: that was eazy lol
 
+//11: made a linux vm
+
 extern void start();
 
 void kernel_entry()
@@ -34,7 +36,7 @@ void kernel_entry()
 	print_bar();
 	print("Currently in Useless Text Editor\n\n");
 	print_bar();
-	cursor_row += 5;
+	cursor_row += 7;
   	init_idt();
   	kb_init();
   	enable_interrupts();
@@ -42,17 +44,22 @@ void kernel_entry()
 	play_sound(600,50);
 	//player_ready();
 	enable_cursor(1,1);
-
+	newline();
 	print(check_vm());
 	print(" | ");
 	print("CPUID: ");
 	print_int(get_model());
-
-	vga_index = 1680;
-	print("Boomer");
-
+	newline();
+	print_bar();
+	for (int i = 0; i < 18; i++)
+	{
+		newline();	
+	}
+	for (int i = 0; i < 80; i++)
+	{
+		print_char('A' + 154);	
+	}
 	handle_keyboard_interrupt();
-	
 
 
 

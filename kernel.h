@@ -1,7 +1,7 @@
 //let's see how GNU nano is...
 //it's cool
 
-#define ANTTUX_VERSION "Anttux r2 v6.0k4"
+#define ANTTUX_VERSION "Anttux r2 v6.0k5"
 
 
 #ifndef KERNEL_H
@@ -137,7 +137,7 @@ void CLI()
 #define KEYBOARD_STATUS_PORT 0x64
 
 #define PROMPT "anttux>"
-#define PROMPT_LENGTH 8
+#define PROMPT_LENGTH 8<
 
 #include "keyboard_map.h"
 
@@ -183,12 +183,6 @@ bool streq(char* string1, int str1len, char* string2, int str2len) {
 		if (string1[i] != string2[i]) return false;
 	}
 	return true;
-}
-
-void print_prompt() {
-	cursor_col = 0;
-	print(PROMPT);
-	cursor_col = PROMPT_LENGTH;
 }
 
 static inline void outb(uint16 port, uint8 data) {
@@ -293,6 +287,12 @@ bool ShiftLock = false;
 
 void handle_keyboard_interrupt() {
 	SetCursorPosition(PositionFromCoords(cursor_col,cursor_row+1));
+	if (ShiftLock == false)
+	{
+		print_ra("sf123");
+	} else {
+		print_ra("SF!@#");
+	}	
 	// Write end of interrupt (EOI)
 	ioport_out(PIC1_COMMAND_PORT, 0x20);
 

@@ -1,0 +1,369 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+ 
+# Built for x86_64-pc-linux-gnu
+ 
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
+# This is free software: you are free to change and redistribute it.
+ 
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+ 
+# Make data base, printed on Thu Sep  2 10:27:53 2021
+ 
+
+# Variables
+ 
+
+ 
+# automatic
+ 
+<D = $(patsubst %/,%,$(dir $<))
+ 
+# automatic
+ 
+?F = $(notdir $?)
+ 
+# environment
+ 
+DESKTOP_SESSION = cinnamon
+ 
+# default
+ 
+.SHELLFLAGS := -c
+ 
+# environment
+ 
+XDG_SESSION_CLASS = user
+ 
+# environment
+ 
+XDG_SESSION_TYPE = x11
+ 
+# environment
+ 
+VSCODE_LOG_NATIVE = false
+ 
+# environment
+ 
+GTK3_MODULES = xapp-gtk3-module
+ 
+# automatic
+ 
+?D = $(patsubst %/,%,$(dir $?))
+ 
+# automatic
+ 
+@D = $(patsubst %/,%,$(dir $@))
+ 
+# environment
+ 
+XAUTHORITY = /home/anttuxdev-anti/.Xauthority
+ 
+# environment
+ 
+GDMSESSION = cinnamon
+ 
+# default
+ 
+MAKE_VERSION := 4.2.1
+# makefile
+CURDIR := /home/anttuxdev-anti/anttux
+# makefile
+SHELL = /bin/sh
+# environment
+GDM_LANG = en_US
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/share/code/code
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
+# environment
+GTK_OVERLAY_SCROLLING = 1
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /home/anttuxdev-anti/Desktop/code.desktop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/anttuxdev-anti/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+LC_NAME = ro_RO.UTF-8
+# environment
+VSCODE_CWD = /home/anttuxdev-anti
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/anttuxdevanti:@/tmp/.ICE-unix/1108,unix/anttuxdevanti:/tmp/.ICE-unix/1108
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"","uploadToServer":false}
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/anttuxdev-anti
+# environment
+LS_COLORS = 
+# environment
+INSIDE_NEMO_PYTHON = 
+# environment
+XDG_SESSION_DESKTOP = cinnamon
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 10869
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/anttuxdev-anti/anttux
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# default
+.LOADED := 
+# environment
+XDG_SEAT = seat0
+# environment
+SSH_AGENT_PID = 1257
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+HOME = /home/anttuxdev-anti
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CODE_CACHE_PATH = /home/anttuxdev-anti/.config/Code/CachedData/3866c3553be8b268c8a7f8c0482c0c0177aa8bfa
+# environment
+LOGNAME = anttuxdev-anti
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
++F = $(notdir $+)
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XDG_VTNR = 7
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 0
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-873ecc1c-ffae-48a2-832e-bed07538a510.sock
+# environment
+XDG_SESSION_ID = c2
+# environment
+USER = anttuxdev-anti
+# environment
+LC_MONETARY = ro_RO.UTF-8
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = X-Cinnamon
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = ro_RO.UTF-8
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_US
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-813523f4-1.59.1-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+BREAKPAD_DUMP_LOCATION = /home/anttuxdev-anti/.config/Code/exthost Crash Reports
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# environment
+LC_PAPER = ro_RO.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+LC_NUMERIC = ro_RO.UTF-8
+# environment
+VSCODE_BROWSER_CODE_LOADING = bypassHeatCheck
+# automatic
+<F = $(notdir $<)
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+LC_MEASUREMENT = ro_RO.UTF-8
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LC_IDENTIFICATION = ro_RO.UTF-8
+# default
+.RECIPEPREFIX := 
+# environment
+LC_ADDRESS = ro_RO.UTF-8
+# environment
+LANG = C
+# environment
+VSCODE_PID = 10869
+# variable set hash-table stats:
+# Load=108/1024=11%, Rehash=0, Collisions=10/136=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2053, inode 2252828): 23 files, no impossibilities.
+
+# 23 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+all:
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from 'Makefile', line 4):
+	nasm -f elf32 boot.asm -o boot.o
+	gcc -m32 -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	ld -m elf_i386 -T linker.ld kernel.o boot.o -o kernel -nostdlib
+	grub-mkrescue -o test.iso iso/
+	mkdir -p iso/boot/grub
+	cp kernel iso/boot/
+	rm kernel
+	rm kernel.o
+	rm boot.o
+	qemu-system-x86_64 test.iso -soundhw pcspk
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-09-01 22:25:53.495375361
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 16):
+	rm kernel
+	rm kernel.o
+	rm boot.o
+	rm *.iso
+
+# files hash-table stats:
+# Load=5/1024=0%, Rehash=0, Collisions=0/17=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+ 
+
+ 
+# No general ('VPATH' variable) search path.
+ 
+
+ 
+# strcache buffers: 1 (0) / strings = 29 / storage = 273 B / avg = 9 B
+# current buf: size = 8162 B / used = 273 B / count = 29 / avg = 9 B
+
+# strcache performance: lookups = 37 / hit rate = 21%
+# hash-table stats:
+# Load=29/8192=0%, Rehash=0, Collisions=1/37=3%
+# Finished Make data base on Thu Sep  2 10:27:53 2021
+
+ 
