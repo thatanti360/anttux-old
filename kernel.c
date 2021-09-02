@@ -1,30 +1,6 @@
 #include "kernel.h"
 #include "kernel_funcs.h"
 
-//1: extern assembly finally works! :) the syntax is diffrent but that's not a (very big) problem. (at least now lol)
-
-//2: changed from gnu assembler (ew) to nasm! also had to change the linker code. keyboard here i come!
-//let's see if extern asm. still works...
-
-//3: yes! it worked! :) but for some reason firefox and vscode freezed after exiting qemu... prob. unrelatable
-//now that i know that anttux works it's time to go v6.0k2!
-
-//4: YESSS!!!! THE KEYBOARD WORKS! :D but it's kind of glitchy
-
-//5: made a little game, works like a charm! :D :D :) :)
-
-//6: now v6.0k3
-
-//7: btw it also runs on real hardware so that's cool
-
-//8: i can now ssh into my linux laptop to a windows one then transfer the test.iso and running it (still) with qemu, all on windows
-
-//9: so typing more than 100 characters crashes the computer. BROKEN PLIZ FIX
-
-//10: that was eazy lol
-
-//11: made a linux vm
-
 extern void start();
 
 void kernel_entry()
