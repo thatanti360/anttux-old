@@ -279,20 +279,20 @@ void kb_init() {
 	ioport_out(PIC1_DATA_PORT, 0xFD);
 }
 
-// bool playsounds = true;
-// bool playerchar = false;
-// int spin = 1;
+bool playsounds = true;
+bool playerchar = false;
+int spin = 1;
 
 bool ShiftLock = false;
 
 void handle_keyboard_interrupt() {
 	SetCursorPosition(PositionFromCoords(cursor_col,cursor_row+1));
-	if (ShiftLock == false)
-	{
-		print_ra("sf123");
-	} else {
-		print_ra("SF!@#");
-	}	
+	// if (ShiftLock == false)
+	// {
+	// 	print_ra("sf123");
+	// } else {
+	// 	print_ra("SF!@#");
+	// }	
 	// Write end of interrupt (EOI)
 	ioport_out(PIC1_COMMAND_PORT, 0x20);
 
@@ -302,24 +302,24 @@ void handle_keyboard_interrupt() {
 	if (status & 0x1) {
 		char keycode = ioport_in(KEYBOARD_DATA_PORT);
 		if (keycode < 0 || keycode >= 128) return;
-		if (keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
-		{
-		switch (keycode)
-		{
-		case 72:
-			cursor_row--;
-			break;
-		case 80:
-			cursor_row++;
-			break;
-		case 75:
-			cursor_col--;
-			break;
-		case 77:
-			cursor_col++;
-			break;
-		}
-		}
+		// if (keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
+		// {
+		// switch (keycode)
+		// {
+		// case 72:
+		// 	cursor_row--;
+		// 	break;
+		// case 80:
+		// 	cursor_row++;
+		// 	break;
+		// case 75:
+		// 	cursor_col--;
+		// 	break;
+		// case 77:
+		// 	cursor_col++;
+		// 	break;
+		// }
+		// }
 		if(keycode == 71)
 		{
 			aybabtu();
@@ -328,141 +328,137 @@ void handle_keyboard_interrupt() {
 		{
 			reboot();
 		}
-		if(keycode == 58)
-		{
-			if (ShiftLock == true)
+		// if(keycode == 58)
+		// {
+		// 	if (ShiftLock == true)
+		// 	{
+		// 		ShiftLock = false;
+		// 		while(inb(0x64) & 0x2);
+        //         		outb(0x60, 0xed);
+		//                 outb(0x60, 4);
+		// 	} else {
+		// 		ShiftLock = true;
+		// 		while(inb(0x64) & 0x2);
+        //         		outb(0x60, 0xed);
+		//                 outb(0x60, 4);
+		// 	}
+		// }
+			if (keycode == 17)
 			{
-				ShiftLock = false;
-				while(inb(0x64) & 0x2);
-                		outb(0x60, 0xed);
-		                outb(0x60, 4);
-			} else {
-				ShiftLock = true;
-				while(inb(0x64) & 0x2);
-                		outb(0x60, 0xed);
-		                outb(0x60, 4);
+				//W
+				player_move_up(1);
+				if(playsounds)
+				{
+					play_sound(300,25);				
+				}
 			}
-		}
-			// if (keycode == 17)
-			// {
-			// 	//W
-			// 	player_move_up(1);
-			// 	if(playsounds)
-			// 	{
-			// 		play_sound(300,25);				
-			// 	}
-			// }
-			// if (keycode == 30)
-			// {
-			// 	//A
-			// 	player_move_left(2);
-			// 	if(playsounds)
-			// 	{
-			// 		play_sound(300,25);				
-			// 	}
-			// }
-			// if (keycode == 31)
-			// {
-			// 	//S
-			// 	player_move_down(1);
-			// 	if(playsounds)
-			// 	{
-			// 		play_sound(300,25);				
-			// 	}
-			// }
-			// if (keycode == 32)
-			// {
-			// 	//D
-			// 	player_move_right(2);
-			// 	if(playsounds)
-			// 	{
-			// 		play_sound(300,25);				
-			// 	}
-			// }
-			// if (keycode == 15)
-			// {
-			// 	int index = 0;
-			// 	for(int i = 0; i < 201; i++)
-			// 	{
-			// 		sleep(25);
-			// 		print_char_color('A' + index,BRIGHT_RED);
-			// 		print_int(index);
-			// 		index++;
-			// 	}	
-			// }
-			// if (keycode == 2)
-			// {
-			// 	init_vga(WHITE,BLUE);
-			// 	player_update_pos();
-			// }
-			// if (keycode == 3)
-			// {
-			// 	init_vga(BROWN,GREEN);
-			// 	player_update_pos();
-			// }
-			// if (keycode == 4)
-			// {
-			// 	init_vga(BRIGHT_BLUE,BLACK);
-			// 	player_update_pos();
-			// }
-			// if (keycode == 5)
-			// {
-			// 	init_vga(WHITE,BLACK);
-			// 	player_update_pos();
-			// }
-			// if (keycode == 6)
-			// {
-			// 	init_vga(BRIGHT_CYAN,BRIGHT_MAGENTA);
-			// 	player_update_pos();
-			// }
-			// if (keycode == 7)
-			// {
-			// 	for (int i = 0; i < 5; i++)
-			// 	{
-			// 		if (playsounds)
-			// 		{
-			// 			play_sound(50,250);	
-			// 			player_move_up(spin);
-			// 			play_sound(100,250);	
-			// 			player_move_right(spin);
-			// 			play_sound(150,250);	
-			// 			player_move_down(spin);
-			// 			play_sound(200,250);	
-			// 			player_move_left(spin);
-			// 		} else {
-			// 			sleep(250);
-			// 			player_move_up(spin);
-			// 			sleep(250);
-			// 			player_move_right(spin);
-			// 			sleep(250);
-			// 			player_move_down(spin);
-			// 			sleep(250);
-			// 			player_move_left(spin);
-			// 		}
-			// 	}
-			// 	spin++;
-			// }
-			// if (keycode == 11)
-			// {
-			// 	if (playsounds == true)
-			// 	{
-			// 		playsounds = false;
-			// 		print_ra("Disabled sounds.");
-			// 	} else {
-			// 		playsounds = true;
-			// 		print_ra("Enabled sounds. ");
-			// 	}
-			// }
-			// if (keycode == 16)
-			// {
-			// 	keyboard_case == 1;
-			// }
-			if (keycode == 28) {
-			// ENTER : Newline
-			cursor_row++;
-			//newline();
-			play_sound(500,10);
-			cursor_col = 0;
+			if (keycode == 30)
+			{
+				//A
+				player_move_left(2);
+				if(playsounds)
+				{
+					play_sound(300,25);				
+				}
+			}
+			if (keycode == 31)
+			{
+				//S
+				player_move_down(1);
+				if(playsounds)
+				{
+					play_sound(300,25);				
+				}
+			}
+			if (keycode == 32)
+			{
+				//D
+				player_move_right(2);
+				if(playsounds)
+				{
+					play_sound(300,25);				
+				}
+			}
+			if (keycode == 15)
+			{
+				int index = 0;
+				for(int i = 0; i < 201; i++)
+				{
+					sleep(25);
+					print_char_color('A' + index,BRIGHT_RED);
+					print_int(index);
+					index++;
+				}	
+			}
+			if (keycode == 2)
+			{
+				init_vga(WHITE,BLUE);
+				player_update_pos();
+			}
+			if (keycode == 3)
+			{
+				init_vga(BROWN,GREEN);
+				player_update_pos();
+			}
+			if (keycode == 4)
+			{
+				init_vga(BRIGHT_BLUE,BLACK);
+				player_update_pos();
+			}
+			if (keycode == 5)
+			{
+				init_vga(WHITE,BLACK);
+				player_update_pos();
+			}
+			if (keycode == 6)
+			{
+				init_vga(BRIGHT_CYAN,BRIGHT_MAGENTA);
+				player_update_pos();
+			}
+			if (keycode == 7)
+			{
+				for (int i = 0; i < 5; i++)
+				{
+					if (playsounds)
+					{
+						play_sound(50,250);	
+						player_move_up(spin);
+						play_sound(100,250);	
+						player_move_right(spin);
+						play_sound(150,250);	
+						player_move_down(spin);
+						play_sound(200,250);	
+						player_move_left(spin);
+					} else {
+						sleep(250);
+						player_move_up(spin);
+						sleep(250);
+						player_move_right(spin);
+						sleep(250);
+						player_move_down(spin);
+						sleep(250);
+						player_move_left(spin);
+					}
+				}
+				spin++;
+			}
+			if (keycode == 11)
+			{
+				if (playsounds == true)
+				{
+					playsounds = false;
+					print_ra("Disabled sounds.");
+				} else {
+					playsounds = true;
+					print_ra("Enabled sounds. ");
+				}
+			}
+			// if (keycode == 28) {
+			// // ENTER : Newline
+			// cursor_row++;
+			// //newline();
+			// play_sound(500,10);
+			// cursor_col = 0;
 			// // Handle command
 			// if (streq(command_buffer, command_len, "shutdown", 8)) {
 			// 	shutdown_vm();
@@ -500,125 +496,125 @@ void handle_keyboard_interrupt() {
 			// }
 			// command_len = 0;
             // command_buffer[0];
-		} else if (keycode == 14) {
-			// BACKSPACE: Move back one unless on prompt
-			// if (cursor_col > PROMPT_LENGTH) {
-				print_char_with_asm(' ', cursor_row, --cursor_col);
-				play_sound(900,10);
-			// }
-		} else {
-			//if (command_len >= COMMAND_BUFFER_SIZE) return;
-			//command_buffer[command_len++] = keyboard_map[keycode];
-			if(keycode != 58)
-			{
-				switch (ShiftLock)
-				{
-					case true:
-						switch ((keyboard_map[keycode]))
-						{
-							case '1':
-								printchar('!', cursor_row, cursor_col++);
-								break;
+		// } else if (keycode == 14) {
+		// 	// BACKSPACE: Move back one unless on prompt
+		// 	// if (cursor_col > PROMPT_LENGTH) {
+		// 		print_char_with_asm(' ', cursor_row, --cursor_col);
+		// 		play_sound(900,10);
+		// 	// }
+		// } else {
+		// 	//if (command_len >= COMMAND_BUFFER_SIZE) return;
+		// 	//command_buffer[command_len++] = keyboard_map[keycode];
+		// 	if(keycode != 58)
+		// 	{
+		// 		switch (ShiftLock)
+		// 		{
+		// 			case true:
+		// 				switch ((keyboard_map[keycode]))
+		// 				{
+		// 					case '1':
+		// 						printchar('!', cursor_row, cursor_col++);
+		// 						break;
 							
-							case '2':
-								printchar('@', cursor_row, cursor_col++);
-								break;
+		// 					case '2':
+		// 						printchar('@', cursor_row, cursor_col++);
+		// 						break;
 
-							case '3':
-								printchar('#', cursor_row, cursor_col++);
-								break;
+		// 					case '3':
+		// 						printchar('#', cursor_row, cursor_col++);
+		// 						break;
 
-							case '4':
-								printchar('$', cursor_row, cursor_col++);
-								break;
+		// 					case '4':
+		// 						printchar('$', cursor_row, cursor_col++);
+		// 						break;
 							
-							case '5':
-								printchar('%', cursor_row, cursor_col++);
-								break;
+		// 					case '5':
+		// 						printchar('%', cursor_row, cursor_col++);
+		// 						break;
 
-							case '6':
-								printchar('^', cursor_row, cursor_col++);
-								break;
+		// 					case '6':
+		// 						printchar('^', cursor_row, cursor_col++);
+		// 						break;
 							
-							case '7':
-								printchar('&', cursor_row, cursor_col++);
-								break;
+		// 					case '7':
+		// 						printchar('&', cursor_row, cursor_col++);
+		// 						break;
 							
-							case '8':
-								printchar('*', cursor_row, cursor_col++);
-								break;
+		// 					case '8':
+		// 						printchar('*', cursor_row, cursor_col++);
+		// 						break;
 
-							case '9':
-								printchar('(', cursor_row, cursor_col++);
-								break;
+		// 					case '9':
+		// 						printchar('(', cursor_row, cursor_col++);
+		// 						break;
 
-							case '0':
-								printchar(')', cursor_row, cursor_col++);
-								break;
+		// 					case '0':
+		// 						printchar(')', cursor_row, cursor_col++);
+		// 						break;
 
-							case '-':
-								printchar('_', cursor_row, cursor_col++);
-								break;
+		// 					case '-':
+		// 						printchar('_', cursor_row, cursor_col++);
+		// 						break;
 
-							case '=':
-								printchar('+', cursor_row, cursor_col++);
-								break;
+		// 					case '=':
+		// 						printchar('+', cursor_row, cursor_col++);
+		// 						break;
 
-							case ',':
-								printchar('<', cursor_row, cursor_col++);
-								break;
+		// 					case ',':
+		// 						printchar('<', cursor_row, cursor_col++);
+		// 						break;
 
-							case '.':
-								printchar('>', cursor_row, cursor_col++);
-								break;
+		// 					case '.':
+		// 						printchar('>', cursor_row, cursor_col++);
+		// 						break;
 
-							case '/':
-								printchar('?', cursor_row, cursor_col++);
-								break;
+		// 					case '/':
+		// 						printchar('?', cursor_row, cursor_col++);
+		// 						break;
 
-							case '[':
-								printchar('{', cursor_row, cursor_col++);
-								break;
+		// 					case '[':
+		// 						printchar('{', cursor_row, cursor_col++);
+		// 						break;
 
-							case ']':
-								printchar('}', cursor_row, cursor_col++);
-								break;
+		// 					case ']':
+		// 						printchar('}', cursor_row, cursor_col++);
+		// 						break;
 
-							case ';':
-								printchar(':', cursor_row, cursor_col++);
-								break;
+		// 					case ';':
+		// 						printchar(':', cursor_row, cursor_col++);
+		// 						break;
 
-							// case "'":
-							// 	printchar('"', cursor_row, cursor_col++);
-							// 	break;
+		// 					// case "'":
+		// 					// 	printchar('"', cursor_row, cursor_col++);
+		// 					// 	break;
 
-							// case "\":
-							// 	printchar('|', cursor_row, cursor_col++);
-							// 	break;
+		// 					// case "\":
+		// 					// 	printchar('|', cursor_row, cursor_col++);
+		// 					// 	break;
 							
-							default:
-								if(keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
-								{
-									printchar(keyboard_map[keycode] - 32, cursor_row, cursor_col++);
-								}
-								break;
-						}
-						break;
-					case false:
-						if(keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
-						{
-							printchar(keyboard_map[keycode], cursor_row, cursor_col++);
-						}
-						break;
-				}	
-			}
-			// print_int(keycode);
-			play_sound(800,5);
-			if (cursor_col >= COLS) {
-				cursor_col = cursor_col % COLS;
-				cursor_row++;
-			}
-		}
+		// 					default:
+		// 						if(keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
+		// 						{
+		// 							printchar(keyboard_map[keycode] - 32, cursor_row, cursor_col++);
+		// 						}
+		// 						break;
+		// 				}
+		// 				break;
+		// 			case false:
+		// 				if(keycode != 72 || keycode != 80 || keycode != 75 || keycode != 77)
+		// 				{
+		// 					printchar(keyboard_map[keycode], cursor_row, cursor_col++);
+		// 				}
+		// 				break;
+		// 		}	
+		// 	}
+		// 	// print_int(keycode);
+		// 	play_sound(800,5);
+		// 	if (cursor_col >= COLS) {
+		// 		cursor_col = cursor_col % COLS;
+		// 		cursor_row++;
+		// 	}
+		// }
 	}
 }
 
