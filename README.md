@@ -1,5 +1,5 @@
 # anttux
-A very simple open-source kernel.
+A very simple open-source operating system.
 
 # How to compile
 Use the compile.sh script or Makefile
